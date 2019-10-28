@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "CCMediator.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    ViewController *v = [[ViewController alloc] init];
+//    [[CCMediator sharedInstance] performTarget:@"ViewController" action:@"test" params:nil shouldCacheTarget:YES];
+    [[CCMediator sharedInstance] performActionWithUrl:[NSURL URLWithString:@"aaa://targetA/actionB?id=1234"] completion:^(NSDictionary * dict) {
+        
+    }];
 }
 
 
